@@ -36,8 +36,8 @@ include_once '../../header.php';
                             <div class="card-body">
                                 <h4 class="card-title"><b>Stok</b></h4>
                                 <br>
-                                 <a href="print.php" class="btn btn-inverse" title="Print Data"><i class="fa fa-print" aria-hidden="true"></i> Print Data</a>
-                                 <a href="print.php" class="btn btn-default waves-effect m-b-5" data-toggle="modal" data-target="#print_tgl" title="Print Data"><i class="mdi mdi-timetable" aria-hidden="true"></i> Data Stok Material Pertanggal</a>
+                                 <a href="print.php" target="blank" class="btn btn-inverse" title="Print Data"><i class="fa fa-print" aria-hidden="true"></i> Print Data</a>
+                                 <!-- <a href="print.php" class="btn btn-default waves-effect m-b-5" data-toggle="modal" data-target="#print_tgl" title="Print Data"><i class="mdi mdi-timetable" aria-hidden="true"></i> Data Stok Material Pertanggal</a> -->
                                     <table id="stok" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>

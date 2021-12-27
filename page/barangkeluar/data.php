@@ -37,7 +37,7 @@ include_once '../../header.php';
                                 <h4 class="card-title"><b>Data Barang Keluar</b></h4>
                                 <br>
                                 <a href="tambah.php" class="btn btn-success btn-rounded w-md waves-effect waves-light m-b-5" title="Tambah Data"><i class="fa fa-plus-circle" aria-hidden="true"></i> Tambah Data</a>
-                                <a href="print.php" class="btn btn-default waves-effect m-b-5" data-toggle="modal" data-target="#print_tgl" title="Print Data"><i class="mdi mdi-timetable" aria-hidden="true"></i> Data Material Keluar Pertanggal</a>
+                                <a href="print.php" target="blank" class="btn btn-inverse" title="Print Data"><i class="fa fa-print" aria-hidden="true"></i> Print Data</a>
                                 <div class="table-responsive m-t-40">
                                     <table id="materialkeluar" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
@@ -82,7 +82,6 @@ include_once '../../header.php';
                                         </tbody>
                                     </table>
                                 </div>
-                                <a href="print.php" class="btn btn-inverse" title="Print Data"><i class="fa fa-print" aria-hidden="true"></i> Print Data</a>
                             </div>
                         </div>
                     </div>
