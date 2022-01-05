@@ -12,7 +12,7 @@ if (mysqli_connect_errno()) {
 
 
 function base_url($url = null){
-  $base_url = "http://localhost/inventori_bps";
+  $base_url = "http://localhost:8888/inventori_bps";
   if($url !=null) {
     return $base_url."/".$url;
   }else{

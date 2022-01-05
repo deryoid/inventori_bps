@@ -2,12 +2,15 @@
 include_once '../../header.php';
     
     if(isset($_POST['edit'])){ 
-        $kode = $_POST['id_karyawan'];
-        $nama = $_POST['nama_karyawan'];
-        $telp = $_POST['telp'];
+        $kode = $_POST['id_pegawai'];
+        $nama = $_POST['nama_pegawai'];
+        $nip = $_POST['nip'];
+        $tmp_lhr = $_POST['tmp_lhr'];
+        $tgl_lhr = $_POST['tgl_lhr'];
         $almt = $_POST['alamat'];
+        $telp = $_POST['telp'];
 
-        $edit = $con->query("UPDATE tb_karyawan SET id_karyawan = '$kode', nama_karyawan = '$nama', telp = '$telp', alamat = '$almt' WHERE id_karyawan = '$kode'"); 
+        $edit = $con->query("UPDATE tb_pegawai SET id_pegawai = '$kode', nama_pegawai = '$nama', nip = '$nip', tmp_lhr = '$tmp_lhr', tgl_lhr = '$tgl_lhr', telp = '$telp', alamat = '$almt' WHERE id_pegawai = '$kode'"); 
 
         if ($edit) {     
         echo "<script>alert('Data berhasil diubah')</script>";     
@@ -36,7 +39,7 @@ include_once '../../header.php';
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
                     <li class="breadcrumb-item active">Dashboard</li>
-                    <li class="breadcrumb-item active">Edit Data Karyawan</li>
+                    <li class="breadcrumb-item active">Edit Data Pegawai</li>
                 </ol>
             </div>
         </div>
@@ -51,24 +54,46 @@ include_once '../../header.php';
         <div class="col-lg-12">
             <div class="card card-outline-info">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">Edit Data Karyawan</h4>
+                    <h4 class="m-b-0 text-white">Edit Data Pegawai</h4>
                 </div>
                 <div class="card-body">
                     <form action="" method="POST" enctype="multipart/form-data">
                     <?php 
                         $kode = $_GET['e']; 
-                        $query = $con->query(" SELECT * FROM tb_karyawan WHERE id_karyawan = '$kode'");
+                        $query = $con->query(" SELECT * FROM tb_pegawai WHERE id_pegawai = '$kode'");
                         while($row=$query->fetch_array()){
                     ?>
                         <div class="form-body">
                             <div class="row p-t-20">
 
-                                <input name="id_karyawan" type="hidden" class="form-control" required value="<?php echo $row['id_karyawan']; ?>">
+                                <input name="id_pegawai" type="hidden" class="form-control" required value="<?php echo $row['id_pegawai']; ?>">
                                 <!--/span-->
+                                
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="control-label"><b>Nama Karyawan</b></label>
-                                        <input name="nama_karyawan" type="text" class="form-control" required value="<?php echo $row['nama_karyawan']; ?>">
+                                        <label class="control-label"><b>Nama Pegawai</b></label>
+                                        <input name="nama_pegawai" type="text" class="form-control" required value="<?php echo $row['nama_pegawai']; ?>">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label"><b>NIP</b></label>
+                                        <input name="nip" type="text" class="form-control" required value="<?php echo $row['nip']; ?>">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label"><b>Tempat Lahir</b></label>
+                                        <input name="tmp_lhr" type="text" class="form-control" required value="<?php echo $row['tmp_lhr']; ?>">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label"><b>Tanggal Lahir</b></label>
+                                        <input name="tgl_lhr" type="date" class="form-control" required value="<?php echo $row['tgl_lhr']; ?>"> 
                                     </div>
                                 </div>
 

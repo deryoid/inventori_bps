@@ -1,11 +1,14 @@
 <?php 
 include_once '../../header.php';
 if(isset($_POST['simpan'])){ 
-        $nama = $_POST['nama_karyawan'];
-        $telp = $_POST['telp'];
+        $nama = $_POST['nama_pegawai'];
+        $nip = $_POST['nip'];
+        $tmp_lhr = $_POST['tmp_lhr'];
+        $tgl_lhr = $_POST['tgl_lhr'];
         $almt = $_POST['alamat'];
+        $telp = $_POST['telp'];
 
-        $tambah = $con->query("INSERT INTO tb_karyawan (nama_karyawan, telp, alamat) VALUES ('$nama', '$telp', '$almt')"); 
+        $tambah = $con->query("INSERT INTO tb_pegawai (nama_pegawai, nip, tmp_lhr, tgl_lhr, alamat, telp) VALUES ('$nama','$nip', '$tmp_lhr', '$tgl_lhr', '$almt', '$telp')"); 
 
         if ($tambah) {     
         echo "<script>alert('Data berhasil disimpan')</script>";     
@@ -34,7 +37,7 @@ if(isset($_POST['simpan'])){
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
                     <li class="breadcrumb-item active">Dashboard</li>
-                    <li class="breadcrumb-item active">Tambah Data Karyawan</li>
+                    <li class="breadcrumb-item active">Tambah Data Pegawai</li>
                 </ol>
             </div>
         </div>
@@ -49,7 +52,7 @@ if(isset($_POST['simpan'])){
         <div class="col-lg-12">
             <div class="card card-outline-info">
                 <div class="card-header">
-                    <h4 class="m-b-0 text-white">Tambah Data Karyawan</h4>
+                    <h4 class="m-b-0 text-white">Tambah Data Pegawai</h4>
                 </div>
                 <div class="card-body">
                     <form action="" method="POST" enctype="multipart/form-data">
@@ -59,10 +62,32 @@ if(isset($_POST['simpan'])){
                                 <!--/span-->
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="control-label"><b>Nama Karyawan</b></label>
-                                        <input name="nama_karyawan" type="text" class="form-control" required>
+                                        <label class="control-label"><b>Nama Pegawai</b></label>
+                                        <input name="nama_pegawai" type="text" class="form-control" required>
                                     </div>
                                 </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label"><b>NIP</b></label>
+                                        <input name="nip" type="text" class="form-control" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label"><b>Tempat Lahir</b></label>
+                                        <input name="tmp_lhr" type="text" class="form-control" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label"><b>Tanggal Lahir</b></label>
+                                        <input name="tgl_lhr" type="date" class="form-control" required>
+                                    </div>
+                                </div>
+
 
                                 <div class="col-md-6">
                                     <div class="form-group">

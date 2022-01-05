@@ -79,7 +79,7 @@ $kode = $_GET['e'];
                                 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="control-label"><b>CP</b></label>
+                                        <label class="control-label"><b>Penanggung Jawab</b></label>
                                         <input name="cp" type="text" class="form-control" required value="<?php echo $row['cp']; ?>">
                                     </div>
                                 </div>

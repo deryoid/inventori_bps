@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Waktu pembuatan: 26 Des 2021 pada 16.35
--- Versi server: 5.7.24
--- Versi PHP: 7.4.12
+-- Host: localhost:8889
+-- Waktu pembuatan: 05 Jan 2022 pada 06.49
+-- Versi server: 5.7.34
+-- Versi PHP: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -179,27 +179,6 @@ INSERT INTO `tb_inventaris` (`id_inven`, `nama_inven`, `tanggal_perolehan`, `sum
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_karyawan`
---
-
-CREATE TABLE `tb_karyawan` (
-  `id_karyawan` int(11) NOT NULL,
-  `nama_karyawan` varchar(255) NOT NULL,
-  `telp` varchar(25) NOT NULL,
-  `alamat` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tb_karyawan`
---
-
-INSERT INTO `tb_karyawan` (`id_karyawan`, `nama_karyawan`, `telp`, `alamat`) VALUES
-(1, 'Hamzah Akhmad', '082832189993', 'Jl. P. Antasari, Pekapuran Raya, Kec. Banjarmasin Tengah, Kota Banjarmasin, Kalimantan Selatan 70234'),
-(2, 'Alfianoor', '08977231221', 'Jl. P. Antasari Gg. Suka Damai No.24, Pekapuran Laut, Kec. Banjarmasin Tengah, Kota Banjarmasin, Kalimantan Selatan 70233');
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `tb_login`
 --
 
@@ -217,6 +196,31 @@ CREATE TABLE `tb_login` (
 INSERT INTO `tb_login` (`id`, `nm_user`, `username`, `password`) VALUES
 (3, 'Admin', 'admin', '7acb6b5e4e6a505dc0302abcdbfbef80'),
 (4, 'Rio', 'admin', '202cb962ac59075b964b07152d234b70');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_pegawai`
+--
+
+CREATE TABLE `tb_pegawai` (
+  `id_pegawai` int(11) NOT NULL,
+  `nama_pegawai` varchar(255) NOT NULL,
+  `nip` varchar(150) NOT NULL,
+  `tmp_lhr` varchar(100) NOT NULL,
+  `tgl_lhr` varchar(150) NOT NULL,
+  `alamat` varchar(150) NOT NULL,
+  `telp` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_pegawai`
+--
+
+INSERT INTO `tb_pegawai` (`id_pegawai`, `nama_pegawai`, `nip`, `tmp_lhr`, `tgl_lhr`, `alamat`, `telp`) VALUES
+(1, 'Hamzah Akhmad', '196411101989031024', 'Banjarmasin', '2022-01-06', 'Jl. P. Antasari, Pekapuran Raya, Kec. Banjarmasin Tengah, Kota Banjarmasin, Kalimantan Selatan 70234', '082832189993'),
+(2, 'Alfianoor', '196605221986022002', 'Tamban', '2022-01-19', 'Jl. P. Antasari Gg. Suka Damai No.24, Pekapuran Laut, Kec. Banjarmasin Tengah, Kota Banjarmasin, Kalimantan Selatan 70233', '08977231221'),
+(4, 'Kifli', '126381293719827391', 'Banjarmasin', '1996-10-21', 'banjarmasin', '0812392193190');
 
 -- --------------------------------------------------------
 
@@ -249,17 +253,17 @@ CREATE TABLE `tb_suplier` (
   `id_suplier` int(11) NOT NULL,
   `kode_suplier` varchar(150) NOT NULL,
   `nama_suplier` varchar(150) NOT NULL,
+  `nama_toko` varchar(150) NOT NULL,
   `telp` varchar(150) NOT NULL,
-  `alamat` varchar(255) NOT NULL,
-  `cp` varchar(25) NOT NULL
+  `alamat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tb_suplier`
 --
 
-INSERT INTO `tb_suplier` (`id_suplier`, `kode_suplier`, `nama_suplier`, `telp`, `alamat`, `cp`) VALUES
-(1, 'KS 1', 'Asrani Nazib', '09885348573', 'Jl. P. Antasari No.81, Pekapuran Laut, Kec. Banjarmasin Tengah, Kota Banjarmasin, Kalimantan Selatan 70233', '-');
+INSERT INTO `tb_suplier` (`id_suplier`, `kode_suplier`, `nama_suplier`, `nama_toko`, `telp`, `alamat`) VALUES
+(1, 'KS 1', 'Asrani Nazib', 'SALATIGA TOKO', '09885348573', 'Jl. P. Antasari No.81, Pekapuran Laut, Kec. Banjarmasin Tengah, Kota Banjarmasin, Kalimantan Selatan 70233');
 
 -- --------------------------------------------------------
 
@@ -316,16 +320,16 @@ ALTER TABLE `tb_inventaris`
   ADD PRIMARY KEY (`id_inven`);
 
 --
--- Indeks untuk tabel `tb_karyawan`
---
-ALTER TABLE `tb_karyawan`
-  ADD PRIMARY KEY (`id_karyawan`);
-
---
 -- Indeks untuk tabel `tb_login`
 --
 ALTER TABLE `tb_login`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `tb_pegawai`
+--
+ALTER TABLE `tb_pegawai`
+  ADD PRIMARY KEY (`id_pegawai`);
 
 --
 -- Indeks untuk tabel `tb_stok`
@@ -374,16 +378,16 @@ ALTER TABLE `tb_inventaris`
   MODIFY `id_inven` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_karyawan`
---
-ALTER TABLE `tb_karyawan`
-  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT untuk tabel `tb_login`
 --
 ALTER TABLE `tb_login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_pegawai`
+--
+ALTER TABLE `tb_pegawai`
+  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_suplier`

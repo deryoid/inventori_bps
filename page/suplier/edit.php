@@ -6,9 +6,9 @@ $id = $_GET['e'];
         $nama = $_POST['nama_suplier'];
         $telp = $_POST['telp'];
         $almt = $_POST['alamat'];
-        $cp= $_POST['cp'];
+        $nama_toko= $_POST['nama_toko'];
 
-        $edit = $con->query("UPDATE tb_suplier SET kode_suplier = '$kode', nama_suplier = '$nama', telp = '$telp', alamat = '$almt', cp ='$cp' WHERE id_suplier = '$id'"); 
+        $edit = $con->query("UPDATE tb_suplier SET kode_suplier = '$kode', nama_suplier = '$nama', telp = '$telp', alamat = '$almt', nama_toko ='$nama_toko' WHERE id_suplier = '$id'"); 
 
         // var_dump($edit);
         // die();
@@ -98,8 +98,8 @@ $id = $_GET['e'];
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="control-label"><b>CP</b></label>
-                                        <input name="cp" type="text" class="form-control" required value="<?php echo $row['cp']; ?>">
+                                        <label class="control-label"><b>Nama Toko</b></label>
+                                        <input name="nama_toko" type="text" class="form-control" required value="<?php echo $row['nama_toko']; ?>">
                                     </div>
                                 </div>
                             </div>

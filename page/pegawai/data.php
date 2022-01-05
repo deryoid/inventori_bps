@@ -19,7 +19,7 @@ include_once '../../header.php';
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
                                 <li class="breadcrumb-item active">Dashboard</li>
-                                <li class="breadcrumb-item active">Data Karyawan</li>
+                                <li class="breadcrumb-item active">Data Pegawai</li>
                             </ol>
                         </div>
                     </div>
@@ -34,7 +34,7 @@ include_once '../../header.php';
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title"><b>Data Karyawan</b></h4>
+                                <h4 class="card-title"><b>Data Pegawai</b></h4>
                                 <br>
                                 <a href="tambah.php" class="btn btn-success btn-rounded w-md waves-effect waves-light m-b-5" title="Tambah Data"><i class="fa fa-plus-circle" aria-hidden="true"></i> Tambah Data</a>
                                 <a href="print.php" target="blank" class="btn btn-inverse" title="Print Data"><i class="fa fa-print" aria-hidden="true"></i> Print Data</a>
@@ -43,23 +43,27 @@ include_once '../../header.php';
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Nama Karyawan</th>
-                                                <th>Telpon</th>
+                                                <th>Nama Pegawai</th>
+                                                <th>NIP</th>
+                                                <th>TTL</th>
                                                 <th>Alamat</th>
+                                                <th>No HP</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         <?php
                                             $no = 1;
-                                            $query = mysqli_query ($con, "SELECT * FROM tb_karyawan");
+                                            $query = mysqli_query ($con, "SELECT * FROM tb_pegawai");
                                             while ($row=$query->fetch_array()){        
                                             ?>  
                                             <tr>
                                                 <td><?php echo $no++; ?></td>
-                                                <td><?php echo $row['nama_karyawan']; ?></td>
-                                                <td><?php echo $row['telp']; ?></td>
+                                                <td><?php echo $row['nama_pegawai']; ?></td>
+                                                <td><?php echo $row['nip']; ?></td>
+                                                <td><?php echo $row['tmp_lhr']." / ".$row['tgl_lhr']; ?></td>
                                                 <td><?php echo $row['alamat']; ?></td>
+                                                <td><?php echo $row['telp']; ?></td>
                                                 <td>
                                                     <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class=" mdi mdi-menu"></i>
                                                     </button>

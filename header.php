@@ -68,12 +68,6 @@ if(!isset($_SESSION['nama'])){
                                 <img src="<?=base_url()?>/assets/images/bps.png" alt="homepage" class="light-logo" width="50"/>
                             </b>
                             <!--End Logo icon -->
-                            <span>
-                            <!-- Logo text -->
-                                <!-- dark Logo text -->
-                                <img src="<?=base_url()?>/assets/images/logo.png" alt="homepage" class="dark-logo" width="50"/>
-                                <!-- Light Logo text -->    
-                                <img src="<?=base_url()?>/assets/images/logo.png" class="light-logo" alt="homepage" width="50"/></span> </a>
                     </div>
                     <!-- ============================================================== -->
                     <!-- End Logo -->
@@ -134,8 +128,8 @@ if(!isset($_SESSION['nama'])){
                     <nav class="sidebar-nav">
                         <ul id="sidebarnav">
                             <li> 
-                                <a class="" href="<?=  base_url('page/karyawan/data.php')?>" aria-expanded="false">
-                                <i class="mdi mdi-account-box"></i><span class="hide-menu">Data Karyawan</span>
+                                <a class="" href="<?=  base_url('page/pegawai/data.php')?>" aria-expanded="false">
+                                <i class="mdi mdi-account-box"></i><span class="hide-menu">Data Pegawai</span>
                                 </a>
                             </li>
                             <li> 

@@ -5,9 +5,9 @@ if(isset($_POST['simpan'])){
         $nama = $_POST['nama_suplier'];
         $telp = $_POST['telp'];
         $almt = $_POST['alamat'];
-        $cp= $_POST['cp'];
+        $nama_toko= $_POST['nama_toko'];
 
-        $tambah = $con->query("INSERT INTO tb_suplier (kode_suplier, nama_suplier, telp, alamat, cp ) VALUES ('$kode', '$nama', '$telp', '$almt', '$cp')"); 
+        $tambah = $con->query("INSERT INTO tb_suplier (kode_suplier, nama_suplier, telp, alamat, nama_toko ) VALUES ('$kode', '$nama', '$telp', '$almt', '$nama_toko')"); 
 
         if ($tambah) {     
         echo "<script>alert('Data berhasil disimpan')</script>";     
@@ -88,8 +88,8 @@ if(isset($_POST['simpan'])){
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="control-label"><b>CP</b></label>
-                                        <input name="cp" type="text" class="form-control" required>
+                                        <label class="control-label"><b>Nama Toko</b></label>
+                                        <input name="nama_toko" type="text" class="form-control" required>
                                     </div>
                                 </div>
                             </div>

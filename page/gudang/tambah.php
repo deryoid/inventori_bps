@@ -73,7 +73,7 @@ if(isset($_POST['simpan'])){
 
                                  <div class="col-md-5">
                                     <div class="form-group">
-                                        <label class="control-label"><b>CP</b></label>
+                                        <label class="control-label"><b>Penanggung Jawab</b></label>
                                         <input name="cp" type="text" class="form-control" required>
                                     </div>
                                 </div>

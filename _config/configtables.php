@@ -1,7 +1,7 @@
 <?php
 $sql_details = array(
     'user' => 'root',
-    'pass' => '',
+    'pass' => 'root',
     'db'   => 'pkl_inventoribps',
     'host' => 'localhost'
 ); 

@@ -34,7 +34,10 @@ $bln = array(
 <img src="<?=base_url()?>/assets/images/bps.png" align="left" width="90" height="90">
     <p align="center"><b>
         <font size="5" align="center">BADAN PUSAT STATISTIK</font> <br>
-        <font size="5" align="center">KABUPATEN BARITO KUALA</font><br><br><br>
+        <font size="5" align="center">KABUPATEN BARITO KUALA</font><br>
+        <font size="2" align="center">Jalan Jenderal Sudirman Nomor 72, Marabahan 70513 Telepon (0511) 4799057, Faksimile (0511) 4799057, <br>
+    email: bps6304@bps.go.id, website: baritokualakab.bps.go.id </font><br>
+        <br>
         <hr size="2px" color="black">
         </b></p>
     <div class="row">
@@ -44,23 +47,26 @@ $bln = array(
                 <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama Karyawan</th>
-                            <th>Telpon</th>
+                            <th>Nama Pegawai</th>
+                            <th>NIP</th>
+                            <th>TTL</th>
                             <th>Alamat</th>
+                            <th>No HP</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php
                         $no = 1;
-                        $query = mysqli_query ($con, "SELECT * FROM tb_karyawan");
+                        $query = mysqli_query ($con, "SELECT * FROM tb_pegawai");
                         while ($row=$query->fetch_array()){        
                         ?>  
                         <tr>
-                            <td><?php echo $no++; ?></td>
-                            <td><?php echo $row['nama_karyawan']; ?></td>
-                            <td><?php echo $row['telp']; ?></td>
-                            <td><?php echo $row['alamat']; ?></td>
-                            
+                        <td><?php echo $no++;?></td>
+                        <td><?php echo $row['nama_pegawai']; ?></td>
+                        <td><?php echo $row['nip']; ?></td>
+                        <td><?php echo $row['tmp_lhr']." / ".$row['tgl_lhr']; ?></td>
+                        <td><?php echo $row['alamat']; ?></td>
+                        <td><?php echo $row['telp']; ?></td>
                         </tr>
                         <?php               
                         }             
@@ -74,28 +80,29 @@ $bln = array(
     </div>
     <br>
     <br>
-  <div id="123" class="pull-right" style="float: right;">
-    <h5>
-      Mengetahui,<br>
-      <br>
-      <br>
-      <br>
-      Eddy Erwan Nopianoor S.Si, M.P.
-
-    </h5>
-
-    </div>
-    <table>
+    <table border="0" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <td style="height: 600px;"></td>
+                <th style="width: 30%;"></th>
+                <th style="width: 30%;"></th>
+                <th style="width: 80px">
+                <div id="123" class="pull-right" style="float: center;">
+                    <h5>
+                    Mengetahui,<br>
+                    <br>
+                    <br>
+                    <br>
+                    Eddy Erwan Nopianoor S.Si, M.P.
+
+                    </h5>
+
+                    </div>
+                </th>
             </tr>
         </thead>
     </table>
-    <footer class="footer" align="center">Jalan Jenderal Sudirman Nomor 72, Marabahan 70513 Telepon (0511) 4799057, Faksimile (0511) 4799057, <br>
-    email: bps6304@bps.go.id, website: baritokualakab.bps.go.id 
-    </footer>
-   
+ 
+
 
 </body>
 

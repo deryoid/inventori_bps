@@ -43,10 +43,10 @@ include_once '../../header.php';
                                         <thead>
                                             <tr>
                                                 <th>Kode Suplier</th>
+                                                <th>Nama Toko</th>
                                                 <th>Nama Suplier</th>
                                                 <th>Telpon</th>
                                                 <th>Alamat</th>
-                                                <th>CP</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -57,10 +57,10 @@ include_once '../../header.php';
                                             ?>  
                                             <tr>
                                                 <td><?php echo $row['kode_suplier']; ?></td>
+                                                <td><?php echo $row['nama_toko']; ?></td>
                                                 <td><?php echo $row['nama_suplier']; ?></td>
                                                 <td><?php echo $row['telp']; ?></td>
                                                 <td><?php echo $row['alamat']; ?></td>
-                                                <td><?php echo $row['cp']; ?></td>
                                                 <td>
                                                     <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class=" mdi mdi-menu"></i>
                                                     </button>

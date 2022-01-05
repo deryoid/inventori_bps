@@ -47,7 +47,7 @@ include_once '../../header.php';
                                                 <th>Nama Gudang</th>
                                                 <th>Telpon</th>
                                                 <th>Alamat</th>
-                                                <th>CP</th>
+                                                <th>Penanggung Jawab</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
