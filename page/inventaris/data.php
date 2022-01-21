@@ -66,6 +66,7 @@ include_once '../../header.php';
                                                     <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class=" mdi mdi-menu"></i>
                                                     </button>
                                                     <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 5px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                                    <a class="dropdown-item" target="blank" href="printdetail.php?e=<?php echo $row[0]; ?>"><i class="fa fa-print"></i> Print</a>
                                                         <a class="dropdown-item" href="edit.php?e=<?php echo $row[0]; ?>"><i class="fa fa-edit"></i> Edit</a>
                                                         <a onclick="return confirm ('Anda yakin ingin menghapus data?');" class="dropdown-item" href="hapus.php?d=<?php echo $row[0]; ?>"><i class="fa fa-trash"></i> Hapus</a>
                                                     </div>

@@ -92,6 +92,7 @@ $bln = array(
                 <th style="width: 80px">
                 <div id="123" class="pull-right" style="float: center;">
                     <h5>
+                    Banjarmasin,  <?php echo tgl_indo(date('Y-m-d')); ?><br>
                     Mengetahui,<br>
                     <br>
                     <br>

@@ -46,7 +46,7 @@ include_once '../../header.php';
                                                 <th>Jenis Barang</th>
                                                 <th>Stok</th>
                                                 <th>Tanggal Masuk</th>                                            
-                                                <!-- <th>Aksi</th> -->
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -60,13 +60,9 @@ include_once '../../header.php';
                                                 <td><?php echo $row['jenis_barang']; ?></td>
                                                 <td><?php echo $row['stok']; ?></td>
                                                 <td><?php echo $row['tgl_masuk']; ?></td>
-                                                <!-- <td>
-                                                    <button type="button" class="btn btn-secondary" aria-haspopup="true" aria-expanded="true">
-                                                    <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 5px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                                    </div>
-                                                    <a onclick="return confirm ('Anda yakin ingin menghapus data?');" class="dropdown-item" href="hapus.php?d=<?php echo $row[0]; ?>"><i class="fa fa-trash"></i> Hapus</a>
-                                                    </button>
-                                                </td> -->
+                                                <td>
+                                                <a class="btn btn-default" target="blank" href="printdetail.php?e=<?php echo $row[0]; ?>"><i class="fa fa-print"></i> Print</a>
+                                                </td>
                                             </tr>
                                             <?php               
                                             }             

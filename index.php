@@ -44,7 +44,7 @@
                     <div style="text-align: center">
                         <img src="assets/images/bps.png" alt="homepage" class="dark-logo" width="100" />
                         <h2>Badan Pusat Statistik</h2>
-                        <h2>Kabupate Barito Kuala</h2>
+                        <h2>Kabupaten Barito Kuala</h2>
                     </div>
                     <br>
                     <br>
